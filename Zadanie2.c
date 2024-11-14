@@ -6,16 +6,16 @@ int main() {
     int n;
     long long int a = 0, b = 1, next;
 
-    printf("Enter the number of terms: ");
+    printf("Wpisz liczbe: ");
     scanf("%d", &n);
 
     if (n <= 0)
      {
-        printf("Number of terms must be positive.\n");
+        printf("Nie prawidlowe dane.\n");
         return 1;
      }
 
-    printf("Fibonacci Sequence: ");
+    printf("Ciag Fibonacciego: ");
 
     for (int i = 1; i <= n; i++)
      {
