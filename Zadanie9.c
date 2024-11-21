@@ -10,14 +10,15 @@ double dzialanie (double c, double E)
 
     }
     double x0= 1.0;
-    double x=(x0+c/x0)/2.0;
-
-    while(fabs(x - x0) >= E)
+    double x, r;
+    do
     {
-        x=x0;
         x=(x0+c/x0)/2.0;
-
+        r=fabs(x-x0);
+        x0=x;
     }
+    while(r >= E);
+    
     return x;
 }
 
@@ -30,8 +31,8 @@ int main()
     printf("Podaj z jaka dokladnoscia: \n");
     scanf("%lf", &E);
 
-    double wynik = dzialanie(c, E);
-    printf("Pierwiastek kwadratowy z %.5f z dokladnoscia %.5f wynosi %.10f :\n", c, E, wynik);
+    float wynik = dzialanie(c, E);
+    printf("Pierwiastek kwadratowy z %.5f z dokladnoscia %.5f wynosi %f :\n", c, E, wynik);
     return 0;
 
     
